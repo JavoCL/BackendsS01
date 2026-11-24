@@ -1,0 +1,14 @@
+services:
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: telovendo_postgres_s01
+    environment:
+      POSTGRES_DB: telovendo_db
+      POSTGRES_USER: postgres_admin
+      POSTGRES_PASSWORD: admin123
+    ports:
+    - "5433:5432"
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
